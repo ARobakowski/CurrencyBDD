@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kantor</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Kursy walut</h1>
+
+      <form action="/pobierz" method="post">
+        <input
+          type="text"
+          name="waluta"
+          placeholder="Waluta (np. EUR, USD)"
+          required
+        />
+
+        <select name="okres">
+          <optgroup label="Krótszy okres">
+            <option value="3dni">Ostatnie 3 dni</option>
+            <option value="tydzien" selected>Ostatni tydzień</option>
+            <option value="3tygodnie">Ostatnie 3 tygodnie</option>
+          </optgroup>
+          <optgroup label="Dłuższy okres">
+            <option value="miesiac">Ostatni miesiąc</option>
+            <option value="3miesiace">Ostatnie 3 miesiące</option>
+            <option value="6miesiecy">Ostatnie 6 miesięcy</option>
+            <option value="rok">Ostatni rok</option>
+          </optgroup>
+        </select>
+
+        <button type="submit">Sprawdź kurs</button>
+      </form>
+
+      {% if blad %}
+      <p style="color: red; margin-top: 20px">{{ blad }}</p>
+      {% endif %} {% if dane %}
+      <div class="wyniki">
+        <h3>Kursy dla {{ waluta }}</h3>
+        <ul>
+          {% for dzien in dane %}
+          <li>
+            📅 {{ dzien.effectiveDate[:10] }}:
+            <strong>{{ dzien.mid }} PLN</strong>
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
+      {% endif %}
+    </div>
+  </body>
+</html>
