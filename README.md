@@ -32,3 +32,16 @@ CurrencyBDD/
 ├── app.py                  # Logika serwera i integracja z API
 ├── Dockerfile              # Definicja kontenera aplikacji
 └── requirements.txt        # Zależności projektu
+```
+# 🚀 Instrukcja uruchomienia projektu
+---
+
+## 🐳 Uruchomienie przez Docker
+
+1.  **Upewnij się, że Docker Desktop jest uruchomiony**.
+2.  **Otwórz terminal** w głównym folderze projektu.
+3.  **Uruchom całe środowisko** jedną komendą:
+    ```bash
+    docker compose up --build
+    ```
+
