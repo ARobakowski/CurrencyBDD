@@ -1,0 +1,20 @@
+
+services:
+  # Aplikacji webowej
+  web:
+    build: .
+    ports:
+      - "5000:5000"
+    volumes:
+      - .:/app
+    environment:
+      - FLASK_ENV=development
+
+  # Automatyczne uruchamianie testów Behave
+  tests:
+    build: .
+    command: behave
+    volumes:
+      - .:/app
+    depends_on:
+      - web
