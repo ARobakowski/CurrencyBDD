@@ -1,5 +1,8 @@
 # 📈 CurrencyBDD - System Analizy Kursów Walut NBP
 
+<img width="1194" height="592" alt="image" src="https://github.com/user-attachments/assets/dc07b6f8-3119-47aa-9159-451483af88d9" />
+
+
 ## 📝 Opis projektu
 Projekt jest aplikacją internetową służącą do pobierania i wyświetlania historycznych kursów walut z API Narodowego Banku Polskiego. Aplikacja pozwala na analizę trendów w różnych przedziałach czasowych (dni, tygodnie, miesiące, lata). Projekt został zrealizowany w celu zademonstrowania podejścia **BDD (Behavior-Driven Development)** oraz zalet **konteneryzacji** przy użyciu Dockera.
 
